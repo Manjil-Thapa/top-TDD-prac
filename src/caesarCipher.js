@@ -8,14 +8,14 @@ const caesarCipher = (str, key) => {
   return chars.join('');
 };
 
-function shiftChar(char, shift) {
-  // uppcase condition
+function shiftChar(char, key) {
+  // uppercase condition
   if (char >= 'A' && char <= 'Z') {
-    char = String.fromCharCode(((char.charCodeAt(0) - 65 + shift) % 26) + 65);
+    char = String.fromCharCode(((char.charCodeAt(0) - 65 + key) % 26) + 65);
   }
   // lowercase condition
   else if (char >= 'a' && char <= 'z') {
-    char = String.fromCharCode(((char.charCodeAt(0) - 97 + shift) % 26) + 97);
+    char = String.fromCharCode(((char.charCodeAt(0) - 97 + key) % 26) + 97);
   }
   return char;
 }
